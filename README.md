@@ -61,7 +61,7 @@ If you want to transfer a Netlify instance from one repo to another (eg, relinki
 
 This last step is crucial, otherwise you will get an error message:
 
-`Failed to persist entry: API_ERROR: Although you appear to have the correct authorization credentials, the `Circadiaware` organization has enabled OAuth App access restrictions, meaning that data access to third-parties is limited. For more information on these restrictions, including how to enable this app, visit https://docs.github.com/articles/restricting-access-to-your-organization-s-data/`
+`Failed to persist entry: API_ERROR: Although you appear to have the correct authorization credentials, the `My-Org` organization has enabled OAuth App access restrictions, meaning that data access to third-parties is limited. For more information on these restrictions, including how to enable this app, visit https://docs.github.com/articles/restricting-access-to-your-organization-s-data/`
 
 ## Additional features
 Beyond the merge between the DIY and Libris themes of Stackbit to provide docs inside the DIY (showcase+blog) theme, here are a few additional features that were implemented:
