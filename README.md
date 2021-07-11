@@ -55,6 +55,7 @@ If you want to transfer a Netlify instance from one repo to another (eg, relinki
     * Homepage URL: the URL to the Netlify built website, the one visitors see. Eg, `https://my-awesome-website.netlify.app/`
     * Application description: whatever you want to remember what this app is about.
     * Authorization callback URL: `https://api.netlify.com/auth/done`
+4. After creating the OAuth app, it should open the app's options (otherwise, go to `https://github.com/organizations/[my-org[/settings/applications/`) and allow to create a new clients secrets keys. Create one, and then copy it along with the ID to Netlify's Site settings > Access Control > OAuth. If there is already a GitHub entry, delete it, because only one entry per hoster can be saved, and create a new one.
 4. Edit `/static/admin/config.yml` to update the `repo` field to point to your github repository's address. If necessary, change also the `branch` field if you don't deploy from the `master` branch but from another branch (eg, `main`).
 5. If you were connected in the admin panel of NetlifyCMS, disconnect, clear cookies, and reconnect. NetlifyCMS should now ask you to grant a new authorization to the repository using the organization account to the OAuth app you created above, the name you chose for the OAuth app should be displayed. Accept, and you are done!
 
