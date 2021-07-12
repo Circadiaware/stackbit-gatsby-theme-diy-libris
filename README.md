@@ -43,7 +43,7 @@ You can create a site on Stackbit and import this repository to kickstart your o
 If you want to allow visitors to edit the website's docs and blogs posts (via the open_authoring option combined with the editorial_workflow of NetlifyCMS), you will need to
 
 1. host your website on GitHub, although there are alternative ways through Identity and Git-Gateway (see [here](https://www.netlifycms.org/docs/open-authoring/) for the details about open_authoring and [here to enable Netlify Identity and Git-Gateway](https://docs.netlify.com/visitor-access/git-gateway/#setup-and-settings)).
-2. You also need to edit `/static/admin/config.yml` to update the `repo` field to point to your github repository's address (only the username and repo name, not the entire URL).
+2. You also need to edit `/static/admin/config.yml` to update the `repo` field to point to your github repository's address (only the username and repo name, not the entire URL) and `site_repo` to point to the public website URL.
 3. And finally, you will need to [create a new OAuth on your GitHub account](https://github.com/settings/applications/new) with the authorization callback URL set to `https://api.netlify.com/auth/done` and then input the client ID and secret key into Netlify as outlined in [this great article](https://www.stackbit.com/blog/jamstack-documentation-sites/).
 
 If you want to transfer a Netlify instance from one repo to another (eg, relinking from a personal repository to an organization repository), then the following must be done:
@@ -56,7 +56,7 @@ If you want to transfer a Netlify instance from one repo to another (eg, relinki
     * Application description: whatever you want to remember what this app is about.
     * Authorization callback URL: `https://api.netlify.com/auth/done`
 4. After creating the OAuth app, it should open the app's options (otherwise, go to `https://github.com/organizations/[my-org[/settings/applications/`) and allow to create a new clients secrets keys. Create one, and then copy it along with the ID to Netlify's Site settings > Access Control > OAuth. If there is already a GitHub entry, delete it, because only one entry per hoster can be saved, and create a new one.
-4. Edit `/static/admin/config.yml` to update the `repo` field to point to your github repository's address. If necessary, change also the `branch` field if you don't deploy from the `master` branch but from another branch (eg, `main`).
+4. Edit `/static/admin/config.yml` to update the `repo` field to point to your github repository's address, and `site_repo` to point to the public website URL. If necessary, change also the `branch` field if you don't deploy from the `master` branch but from another branch (eg, `main`).
 5. If you were connected in the admin panel of NetlifyCMS, disconnect, clear cookies, and reconnect. NetlifyCMS should now ask you to grant a new authorization to the repository using the organization account to the OAuth app you created above, the name you chose for the OAuth app should be displayed. Accept, and you are done!
 
 This last step is crucial, otherwise you will get an error message:
