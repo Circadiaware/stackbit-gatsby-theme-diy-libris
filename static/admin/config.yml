@@ -49,7 +49,7 @@ collections:
     folder: src/pages/blog  # relative url where the editable documents are stored
     create: true  # allow users to create new documents in this collection
     slug: "{{title}}"  # filename template, the adequate file extension (e.g., .md) will be automatically added
-    # preview_path: "src/pages/blog/{{slug}}"
+    preview_path: "blog/{{slug}}"
     extension: md
     media_folder: '{{media_folder}}/blog'
     summary: "{{title}} published by {{commit_author}} ({{commit_date}})"
