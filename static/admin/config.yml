@@ -49,7 +49,7 @@ collections:
     folder: src/pages/blog  # relative url where the editable documents are stored
     create: true  # allow users to create new documents in this collection
     slug: "{{title}}"  # filename template, the adequate file extension (e.g., .md) will be automatically added
-    preview_path: "src/pages/blog/preview/{{title}}"
+    preview_path: "src/pages/blog/preview/{{slug}}"
     extension: md
     media_folder: '{{media_folder}}/blog'
     summary: "{{title}} published by {{commit_author}} ({{commit_date}})"
@@ -75,6 +75,7 @@ collections:
     folder: src/data/authors
     create: true
     slug: "{{id}}"
+    preview_path: "src/data/authors/preview/{{slug}}"
     extension: yaml
     media_folder: '{{media_folder}}/blog'
     summary: "{{first_name}} {{last_name}} ({{id}})"
@@ -89,6 +90,7 @@ collections:
     folder: src/data/categories
     create: true
     slug: "{{id}}"
+    preview_path: "src/data/categories/preview/{{slug}}"
     extension: yaml
     media_folder: '{{media_folder}}/blog'
     fields:
@@ -101,6 +103,7 @@ collections:
     folder: src/data/tags
     create: true
     slug: "{{id}}"
+    preview_path: "src/data/tags/preview/{{slug}}"
     extension: yaml
     media_folder: '{{media_folder}}/blog'
     fields:
