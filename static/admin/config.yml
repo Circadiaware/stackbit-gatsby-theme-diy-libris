@@ -28,11 +28,11 @@ collections:
     create: true
     #path: '/'  # allows to walk inside folders, see https://www.netlifycms.org/docs/beta-features/#folder-collections-path and https://github.com/netlify/netlify-cms/issues/513 and nested collections which allow for recursive subfolders walking without requiring a specific path template: https://www.netlifycms.org/docs/beta-features/#nested-collections
     slug: "{{title}}/index"
-    # preview_path: "src/pages/docs/{{slug}}"
+    preview_path: "{{path}}/{{slug}}"
     #extension: md
     media_folder: '{{media_folder}}/docs'
-    # adding a nested object will show the collection folder structure, see https://www.netlifycms.org/docs/beta-features/#nested-collections and https://github.com/netlify/netlify-cms/issues/4741#issuecomment-748627801
     summary: "{{title}} (last modified {{commit_date}})"  # text displayed as the name of each entry in the UI listing
+    # adding a nested object will show the collection folder structure, see https://www.netlifycms.org/docs/beta-features/#nested-collections and https://github.com/netlify/netlify-cms/issues/4741#issuecomment-748627801
     nested:
       depth: 100 # max depth to show in the collection tree
       #summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
@@ -49,7 +49,7 @@ collections:
     folder: src/pages/blog  # relative url where the editable documents are stored
     create: true  # allow users to create new documents in this collection
     slug: "{{title}}"  # filename template, the adequate file extension (e.g., .md) will be automatically added
-    preview_path: "blog/{{slug}}"
+    preview_path: "blog/{{slug}}"  # previow_path does NOT define where to store the preview, this is defined by the other collection's parameters (folder, slug), but instead it just tells NetlifyCMS the relative URL where to find the preview on the website! In other words, GatsbyJS can be configured any way we want to rewrite URLs or dynamically create new pages ia gatsby-node.js, hence preview_path usefulness as NetlifyCMS can't possibly know for sure where to find the URL for the new file, this has to be defined by us. The path is relative to the root web domain, not the file tree.
     extension: md
     media_folder: '{{media_folder}}/blog'
     summary: "{{title}} published by {{commit_author}} ({{commit_date}})"
@@ -75,7 +75,7 @@ collections:
     folder: src/data/authors
     create: true
     slug: "{{id}}"
-    preview_path: "src/data/authors/preview/{{slug}}"
+    preview_path: "blog/author/{{slug}}"
     extension: yaml
     media_folder: '{{media_folder}}/blog'
     summary: "{{first_name}} {{last_name}} ({{id}})"
@@ -90,7 +90,7 @@ collections:
     folder: src/data/categories
     create: true
     slug: "{{id}}"
-    # preview_path: "src/data/categories/{{slug}}"
+    preview_path: "blog/category/{{slug}}"
     extension: yaml
     media_folder: '{{media_folder}}/blog'
     fields:
@@ -103,7 +103,7 @@ collections:
     folder: src/data/tags
     create: true
     slug: "{{id}}"
-    # preview_path: "src/data/tags/{{slug}}"
+    preview_path: "blog/tag/{{slug}}"
     extension: yaml
     media_folder: '{{media_folder}}/blog'
     fields:
