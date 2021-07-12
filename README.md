@@ -63,6 +63,8 @@ This last step is crucial, otherwise you will get an error message:
 
 `Failed to persist entry: API_ERROR: Although you appear to have the correct authorization credentials, the `My-Org` organization has enabled OAuth App access restrictions, meaning that data access to third-parties is limited. For more information on these restrictions, including how to enable this app, visit https://docs.github.com/articles/restricting-access-to-your-organization-s-data/`
 
+If you encounter other errors with NetlifyCMS, see [these tips](https://answers.netlify.com/t/common-issue-netlify-cms-api-error-now-what/4624).
+
 ## Additional features
 Beyond the merge between the DIY and Libris themes of Stackbit to provide docs inside the DIY (showcase+blog) theme, here are a few additional features that were implemented:
 
